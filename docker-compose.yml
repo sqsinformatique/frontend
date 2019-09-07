@@ -7,10 +7,8 @@ services:
       - ./web:/usr/local/apache2/htdocs/
     ports:
       - "8090:80"
-    networks:
-      - backend
 
 networks:
-  backend:
-    driver: bridge
-    name: "sqsnet"
+  default:
+    external:
+      name: sqsnet
