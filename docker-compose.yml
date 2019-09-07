@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  web:
+    image: httpd:2.4
+    volumes:
+      - ./web:/usr/local/apache2/htdocs/
+    ports:
+      - "8090:80"
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+    name: "sqsnet"
