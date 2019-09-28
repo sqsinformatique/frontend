@@ -2,9 +2,9 @@ version: '3.5'
 
 services:
   web:
-    image: httpd:2.4
+    image: php:7.2-apache
     volumes:
-      - ./web:/usr/local/apache2/htdocs/
+      - ./web:/var/www/html
     ports:
       - "8090:80"
 
